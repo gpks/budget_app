@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 9.99
+  expense: false
+  revenue: false
+  date: 2017-07-06 23:20:28
+  subcategory_id: 1
+  name: MyString
+
+two:
+  amount: 9.99
+  expense: false
+  revenue: false
+  date: 2017-07-06 23:20:28
+  subcategory_id: 1
+  name: MyString

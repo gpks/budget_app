@@ -1,0 +1,2 @@
+class DefaultSubcategory < ApplicationRecord
+end
