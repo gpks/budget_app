@@ -15,6 +15,7 @@ module FrontendService
         def prepare_category(category)
           {
             name: category.name,
+            id: category.id,
             subcategories: prepare_subcategories(category.subcategories)
           }
         end

@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import CategoriesList from './CategoriesList';
 
-export default class HelloWorld extends React.Component {
+export default class Defaults extends React.Component {
   static propTypes = {
     submit: PropTypes.string.isRequired, // this is passed from the Rails view
   };
@@ -11,34 +12,33 @@ export default class HelloWorld extends React.Component {
    */
   constructor(props) {
     super(props);
-    console.log(props)
     // How to set initial state in ES6 class syntax
     // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
-    this.state = props;
+    this.state = { subcategoriesIds: [], categoriesIds: [] }
+    this.handleCategoryChange = this.handleCategoryChange.bind(this)
+    this.ifCategoryChecked = this.ifCategoryChecked.bind(this)
   }
 
-  updateName = (name) => {
-    this.setState({ name });
+  handleCategoryChange(categoryId) {
+    const status = this.state
+    status.categoriesIds.push(categoryId)
+    this.setState({ status })
+  };
+
+  ifCategoryChecked(category) {
+    this.state.categoriesIds.includes(category.id)
   };
 
   render() {
     return (
       <div>
-        <h3>
-          Hello, {this.state.submit}!
-        </h3>
+        SELECT CATEGORIES
         <hr />
-        <form >
-          <label htmlFor="name">
-            Say hello to:
-          </label>
-          <input
-            id="name"
-            type="text"
-            value={this.state.submit}
-            onChange={(e) => this.updateName(e.target.value)}
-          />
-        </form>
+        <CategoriesList
+          categories={this.props.categories}
+          handleCategoryChange={this.handleCategoryChange}
+          ifCategoryChecked={this.ifCategoryChecked}
+        />
       </div>
     );
   }
