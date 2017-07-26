@@ -6,7 +6,7 @@ class Defaults::NewController < ApplicationController
   private
 
   def data
-    categories_lists.merge(submit: 'submit_path')
+    categories_lists.merge(submit: defaults_path )
   end
 
   def categories_lists

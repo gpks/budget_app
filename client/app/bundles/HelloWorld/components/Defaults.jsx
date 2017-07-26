@@ -3,6 +3,11 @@ import React from 'react';
 import CategoriesList from './CategoriesList';
 import SubcategoriesList from './SubcategoriesList';
 import _ from 'lodash';
+import axios from 'axios';
+
+const token = document.getElementsByName('csrf-token')[0].getAttribute('content')
+axios.defaults.headers.common['X-CSRF-Token'] = token
+axios.defaults.headers.common['Accept'] = 'application/json'
 
 export default class Defaults extends React.Component {
   static propTypes = {
@@ -33,7 +38,7 @@ export default class Defaults extends React.Component {
     } else {
       status.categoriesIds.push(categoryId)
     };
-    this.setState({ status })
+    this.setState({ ...status })
   };
 
   handleSubcategoryChange(subcategoryId) {
@@ -56,6 +61,15 @@ export default class Defaults extends React.Component {
 
   onButtonSubmit(){
     console.log(this.state)
+    axios.post(this.props.submit,
+      this.state
+    )
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   };
 
   render() {
