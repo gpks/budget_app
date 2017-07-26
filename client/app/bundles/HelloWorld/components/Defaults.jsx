@@ -21,6 +21,7 @@ export default class Defaults extends React.Component {
     this.handleSubcategoryChange = this.handleSubcategoryChange.bind(this)
     this.ifCategoryChecked = this.ifCategoryChecked.bind(this)
     this.ifSubcategoryChecked = this.ifSubcategoryChecked.bind(this)
+    this.onButtonSubmit = this.onButtonSubmit.bind(this)
   }
 
   handleCategoryChange(categoryId) {
@@ -53,6 +54,10 @@ export default class Defaults extends React.Component {
     return this.state.subcategoriesIds.includes(subcategory.id);
   };
 
+  onButtonSubmit(){
+    console.log(this.state)
+  };
+
   render() {
     return (
       <div>
@@ -67,6 +72,13 @@ export default class Defaults extends React.Component {
           ifCategoryChecked={this.ifCategoryChecked}
           ifSubcategoryChecked={this.ifSubcategoryChecked}
         />
+        <button
+          type="button"
+          className="btn btn-primary btn-block"
+          onClick={this.onButtonSubmit}
+        >
+            Prześlij
+        </button>
       </div>
     );
   }
