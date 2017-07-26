@@ -26,9 +26,9 @@ export default class Defaults extends React.Component {
   handleCategoryChange(categoryId) {
     const status = this.state
     if (status.categoriesIds.includes(categoryId)) {
-      status.categoriesIds = _.without(status.categoriesIds, categoryId)
+      _.pull(status.categoriesIds, categoryId)
       const category = _.find(this.props.categories, { id: categoryId })
-      status.subcategoriesIds = _.without(status.subcategoriesIds, ..._.flatMap(category.subcategories, 'id'))
+      _.pull(status.subcategoriesIds, ..._.flatMap(category.subcategories, 'id'))
     } else {
       status.categoriesIds.push(categoryId)
     };
@@ -38,7 +38,7 @@ export default class Defaults extends React.Component {
   handleSubcategoryChange(subcategoryId) {
     const status = this.state
     if (status.subcategoriesIds.includes(subcategoryId)) {
-      status.subcategoriesIds = _.without(status.subcategoriesIds, subcategoryId)
+      _.pull(status.subcategoriesIds, subcategoryId)
     } else {
       status.subcategoriesIds.push(subcategoryId)
     };
