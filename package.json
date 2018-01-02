@@ -2,8 +2,9 @@
   "scripts": {
     "postinstall": "cd client && yarn install"
   },
-
   "name": "budget",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "yarn": "^1.3.2"
+  }
 }
