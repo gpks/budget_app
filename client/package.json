@@ -8,6 +8,8 @@
   },
   "cacheDirectories": ["node_modules", "client/node_modules"],
   "dependencies": {
+    "axios": "^0.16.2",
+    "lodash": "^4.17.4",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^6.3.2",
