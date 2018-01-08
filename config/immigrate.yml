@@ -1,0 +1,13 @@
+development:
+  foreign_server:
+    host: localhost
+    port: 5432
+    dbname: budget_2_development
+
+production:
+  foreign_server:
+    host: 192.83.123.90
+    port: 5432
+    dbname: foreign_db
+    user: foreign_user
+    password: password

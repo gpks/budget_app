@@ -7,6 +7,7 @@ class CreateTransactions < ActiveRecord::Migration[5.1]
       t.datetime :date
       t.integer :subcategory_id
       t.string :name
+      t.references :user
 
       t.timestamps
     end
