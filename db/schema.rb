@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180104220221) do
+ActiveRecord::Schema.define(version: 20180109211950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20180104220221) do
 
   create_table "default_subcategories", force: :cascade do |t|
     t.bigint "user_id"
-    t.integer "subcategory_id"
+    t.bigint "subcategory_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_default_subcategories_on_user_id"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20180104220221) do
 
   create_table "plans", force: :cascade do |t|
     t.bigint "monthly_plan_id"
-    t.integer "subcategory_id"
+    t.bigint "subcategory_id"
     t.decimal "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20180104220221) do
     t.boolean "expense"
     t.boolean "revenue"
     t.datetime "date"
-    t.integer "subcategory_id"
+    t.bigint "subcategory_id"
     t.string "name"
     t.bigint "user_id"
     t.datetime "created_at", null: false

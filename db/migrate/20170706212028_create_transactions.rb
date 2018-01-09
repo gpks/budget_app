@@ -5,7 +5,7 @@ class CreateTransactions < ActiveRecord::Migration[5.1]
       t.boolean :expense
       t.boolean :revenue
       t.datetime :date
-      t.integer :subcategory_id
+      t.bigint :subcategory_id
       t.string :name
       t.references :user
 
