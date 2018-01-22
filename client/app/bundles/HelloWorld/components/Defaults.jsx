@@ -48,7 +48,7 @@ export default class Defaults extends React.Component {
     } else {
       status.subcategoriesIds.push(subcategoryId)
     };
-    this.setState({ status })
+    this.setState({ ...status })
   };
 
   ifCategoryChecked(category) {
